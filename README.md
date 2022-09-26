@@ -1,20 +1,12 @@
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
 ## Installation
 
-```bash
+### Entrar na pasta teste-api
+
 $ npm install
-```## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Rodar
 
-## Installation
-
-```bash
-$ npm install
-```
+$ npm run start:dev
 
 ## 🛠️ Tecnologias 
 
