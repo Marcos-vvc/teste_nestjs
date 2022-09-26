@@ -9,7 +9,7 @@ $ npm install
 $ npm run start:dev
 
 ## Swagger UI
-
+Ps: Projeto tem que estar rodanddo na máquina!
 [Link](http://localhost:3000/api)
 
 ## 🛠️ Tecnologias 
