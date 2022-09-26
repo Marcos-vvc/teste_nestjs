@@ -1,6 +1,5 @@
 import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from "typeorm"
 import { Favorite } from "./favorites.entity"
-import { Filme } from "./filme.entity"
 
 @Entity('usuario')
 export class User {
@@ -19,7 +18,7 @@ export class User {
     @Column()
     isAdmin: boolean
    
-    @OneToMany(() => Favorite, (favorite) => favorite.user_id)
+    @OneToMany(() => Favorite, (favorite) => favorite.user)
     favorites: Favorite[] 
 
 }

@@ -24,7 +24,7 @@ export class Filme {
     @Column()
     mediaIMDB: number
     
-    @OneToMany(() => Favorite, (favorite) => favorite.filme_id)
+    @OneToMany(() => Favorite, (favorite) => favorite.filme)
     favorites: Favorite[] 
 }
 

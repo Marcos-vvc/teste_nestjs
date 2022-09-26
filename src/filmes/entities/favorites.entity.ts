@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm"
+import { Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm"
 import { Filme } from "./filme.entity"
 import { User } from "./user.entity"
 
@@ -7,17 +7,14 @@ export class Favorite {
     @PrimaryGeneratedColumn("uuid")
     id: string     
     
-    @JoinColumn()
+    @JoinColumn({name: 'user_id'})
     @ManyToOne(() => User, (user)=> user.favorites)
-    user_id: User
+    user: User
 
 
-    @JoinColumn()
+    @JoinColumn({name: 'filme_id'})
     @ManyToOne(() => Filme, (filme)=> filme.favorites)
-    filme_id: Filme  
-  
-    
- 
+    filme: Filme 
 
 }
 

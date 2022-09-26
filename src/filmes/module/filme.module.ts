@@ -7,10 +7,20 @@ import { FilmesController } from '../controllers/filme.controller';
 import { filmesService } from '../services/filme.service';
 import { UserController } from '../controllers/user.controller';
 import { userService } from '../services/user.service';
+import { JwtService } from '@nestjs/jwt'
+import { JwtModule } from '@nestjs/jwt'
+import { Authenticator } from '../auth/auth';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Filme, Favorite, User])],
+    imports: [TypeOrmModule.forFeature([Filme, Favorite, User]),ConfigModule.forRoot(),
+    JwtModule.register({        
+        secretOrPrivateKey: "bananinha",
+        signOptions: { expiresIn: "30d" }
+    })
+    ],
     controllers: [FilmesController, UserController],
-    providers: [filmesService, userService],
+    providers: [filmesService, userService, JwtService, Authenticator],
+    exports: [userService]
 })
-export class CoursesModule {}
+export class FilmesModule { }
